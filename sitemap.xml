@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://mrvr.jp/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.jp/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://mrvr.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.jp/"/>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/background.webp</image:loc>
+      <image:title>WebXRで遊ぼう！VRゲームセンター</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/mrsecret_vr_widescreen.webp</image:loc>
+      <image:title>ミスター秘密侵入VR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/mrvr_character.webp</image:loc>
+      <image:title>ミスターVRキャラクター</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://mrvr.jp/en/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.jp/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://mrvr.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.jp/"/>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/background.webp</image:loc>
+      <image:title>Play with WebXR! VR Game Arcade</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/mrsecret_vr_widescreen.webp</image:loc>
+      <image:title>Mr. Secret Infiltration VR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/mrvr_character.webp</image:loc>
+      <image:title>Mr. VR Character</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://mrvr.jp/zh/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.jp/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://mrvr.jp/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.jp/"/>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/background.webp</image:loc>
+      <image:title>用WebXR玩游戏！VR游戏中心</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/mrsecret_vr_widescreen.webp</image:loc>
+      <image:title>秘密潜入VR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mrvr.jp/assets/images/mrvr_character.webp</image:loc>
+      <image:title>VR大先生角色</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://mrvr.jp/#xr-projects</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/#xr-projects"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/#xr-projects"/>
+  </url>
+  
+  <url>
+    <loc>https://mrvr.jp/en/#xr-projects</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.jp/#xr-projects"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/#xr-projects"/>
+  </url>
+  
+  <url>
+    <loc>https://mrvr.jp/zh/#xr-projects</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.jp/#xr-projects"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/#xr-projects"/>
+  </url>
+  
+  <url>
+    <loc>https://mr-vr-jp.github.io/mrsecret-vr/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://mr-othello.netlify.app/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset> 

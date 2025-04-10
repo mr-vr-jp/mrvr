@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="ja-JP" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。Meta Quest、PICO、Vision ProなどのVRデバイスに対応。ミスターVR公式サイト。日本語ユーザー向け。">
+    <meta name="keywords" content="WebXR, VRゲーム, MRゲーム, ミスターVR, VR, AR, MR, XR, バーチャルリアリティ, VRコンテンツ, ブラウザVR, WebVR, 日本語VRゲーム">
+    <meta name="author" content="ミスターVR">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="サイト所有権確認コード">
+    <meta name="msvalidate.01" content="Bing所有権確認コード">
+    <meta name="yandex-verification" content="Yandex所有権確認コード">
+    
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="WebXRで遊ぼう！VRゲームセンター | ミスターVR公式">
+    <meta property="og:description" content="ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。Meta Quest、PICO、Vision Proなどに対応。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrvr.jp/">
+    <meta property="og:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta property="og:site_name" content="WebXRで遊ぼう！VRゲームセンター">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="WebXRで遊ぼう！VRゲームセンター - ブラウザで遊べるVR/MRゲーム">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@3DVR3">
+    <meta name="twitter:title" content="WebXRで遊ぼう！VRゲームセンター | ミスターVR公式">
+    <meta name="twitter:description" content="ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。">
+    <meta name="twitter:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta name="twitter:creator" content="@3DVR3">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mrvr.jp/">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="ja-JP" href="https://mrvr.jp/">
+    <link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/">
+    <link rel="alternate" hreflang="en-GB" href="https://mrvr.jp/en/">
+    <link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/">
+    <link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://mrvr.jp/">
+    
+    <!-- 関連リンク -->
+    <link rel="preconnect" href="https://mr-othello.netlify.app">
+    <link rel="preconnect" href="https://mr-vr-jp.github.io">
+    <link rel="dns-prefetch" href="https://mr-othello.netlify.app">
+    <link rel="dns-prefetch" href="https://mr-vr-jp.github.io">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://twitter.com">
+    
+    <!-- セキュリティ -->
+    <meta name="csrf-token" content="VRゲームセンターCSRFトークン">
+    
+    <!-- Mobile App関連 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="WebXRゲームセンター">
+    <meta name="application-name" content="WebXRゲームセンター">
+    <meta name="theme-color" content="#0a0a14">
+    
+    <!-- PWA対応 -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/icon-192x192.png">
+    
+    <title>WebXRで遊ぼう！VRゲームセンター | ミスターVR公式</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/logo_primary.webp" type="image/webp">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- 未来的な3D背景効果 -->
+    <div class="particle-background" id="particleContainer"></div>
+    <div class="grid-lines">
+        <div class="grid-container" id="gridContainer"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo_primary.webp" alt="ミスターVRロゴ">
+                </a>
+            </div>
+            
+            <button class="hamburger" aria-expanded="false" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <ul class="navbar-nav">
+                <!-- ホームリンク削除 -->
+                <li class="nav-item">
+                    <a href="#xr-projects" class="nav-link" itemprop="url">
+                        <i class="fa-solid fa-vr-cardboard"></i> <span itemprop="name">WebXRゲーム</span>
+                    </a>
+                </li>
+                <li class="nav-item language-selector">
+                    <a href="#" class="nav-link language-toggle" itemprop="url">
+                        <i class="fa-solid fa-globe"></i> <span itemprop="name">日本語</span>
+                    </a>
+                    <ul class="language-dropdown">
+                        <li><a href="index.html" class="active" data-lang="ja">日本語</a></li>
+                        <li><a href="en/index.html" data-lang="en">English</a></li>
+                        <li><a href="zh/index.html" data-lang="zh">中文</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- WebXR Game Banner - トップに移動 -->
+    <section class="webxr-banner hero-webxr fade-in" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; border-top: none; padding: 0; margin-bottom: 0; padding-top: 80px;">
+        <div class="container">
+            <div class="webxr-banner-content fade-in" style="max-width: 900px; padding: 3rem; background: rgba(30, 30, 60, 0.6); border-radius: 16px; box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); backdrop-filter: blur(10px); border: 1px solid rgba(0, 229, 255, 0.1);">
+                <div class="webxr-badge-large fade-in">
+                    <span class="badge-icon"><i class="fa-solid fa-vr-cardboard"></i></span>
+                    <span class="badge-text">WebXR対応</span>
+                </div>
+                <h2 style="background: linear-gradient(to right, var(--neon-blue), var(--neon-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">ブラウザで遊べるVR/MRゲーム</h2>
+                <p>お使いのVRデバイスから直接プレイ。インストール不要！</p>
+                <div class="webxr-banner-buttons">
+                    <a href="#xr-projects" class="btn btn-play vr-launch-btn pulse-animation">
+                        <i class="fa-solid fa-vr-cardboard"></i> ゲームをチェック
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games" id="xr-projects">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>XRプロジェクト</h2>
+                <p class="section-subtitle">最新のVR・MR体験</p>
+            </div>
+            
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">すべて</button>
+                <button class="filter-btn" data-filter="vr">VR</button>
+                <button class="filter-btn" data-filter="mr">MR</button>
+                <button class="filter-btn" data-filter="webxr">WebXR</button>
+                <button class="filter-btn" data-filter="supervised">監修作品</button>
+                <button class="filter-btn" data-filter="original">自作ゲーム</button>
+            </div>
+            
+            <div class="projects-container">
+                <div class="project-card slide-up" data-category="vr supervised" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-badge">監修作品</div>
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="assets/images/mrsecret_vr_widescreen.webp" alt="ミスター秘密侵入VR ゲーム画面1" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="assets/images/slide_game_1.webp" alt="ミスター秘密侵入VR ゲーム画面2">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="assets/images/slide_game_2.webp" alt="ミスター秘密侵入VR ゲーム画面3">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="assets/images/slide_game_3.webp" alt="ミスター秘密侵入VR ゲーム画面4">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="assets/images/slide_game_4.webp" alt="ミスター秘密侵入VR ゲーム画面5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">ミスター秘密侵入VR</h3>
+                        <p class="project-desc" itemprop="description">
+                            VRの強みを最大限に活かした新感覚ステルスアクション！ミスターVR監修の人気タイトル。
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="Meta Quest対応" itemprop="operatingSystem">
+                                <i class="fa-solid fa-vr-cardboard"></i> Quest
+                            </span>
+                            <span class="device-icon" title="PC VR対応" itemprop="operatingSystem">
+                                <i class="fa-solid fa-desktop"></i> PCVR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="VR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://mr-vr-jp.github.io/mrsecret-vr/" class="btn btn-secondary" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-book"></i> 公式マニュアル
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-badge">最新作</div>
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="assets/images/background.webp" alt="MRオセロ メイン画面" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="assets/images/mr_othello_gameplay.jpg" alt="MRオセロ ゲームプレイ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">MRオセロ</h3>
+                        <p class="project-desc" itemprop="description">
+                            WebXRを活用した没入型オセロゲーム。現実空間にバーチャルのオセロ盤を設置して遊べます。
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="WebXR技術で開発" itemprop="operatingSystem">
+                                <i class="fa-solid fa-globe"></i> WebXR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="MR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://mr-othello.netlify.app/" class="btn btn-play" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-vr-cardboard"></i> 今すぐプレイ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="webxr-guide fade-in">
+                <h3>WebXR対応アプリの起動方法</h3>
+                <div class="guide-content">
+                    <h4>WebXRとは？</h4>
+                    <div class="webxr-explanation" style="background: rgba(20, 20, 50, 0.4); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 3px solid var(--neon-blue);">
+                        <p>WebXRは、特別なアプリをインストールしなくても、ブラウザから直接VR（バーチャルリアリティ）やMR（複合現実）体験ができる技術です。</p>
+                        <div class="webxr-benefits" style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 1.5rem 0; text-align: center;">
+                            <div class="webxr-benefit-item" style="padding: 0.7rem; flex: 1; min-width: 120px;">
+                                <i class="fa-solid fa-download" style="font-size: 1.8rem; color: var(--neon-blue); display: block; margin-bottom: 0.5rem;"></i>
+                                <span>インストール不要</span>
+                            </div>
+                            <div class="webxr-benefit-item" style="padding: 0.7rem; flex: 1; min-width: 120px;">
+                                <i class="fa-solid fa-globe" style="font-size: 1.8rem; color: var(--neon-blue); display: block; margin-bottom: 0.5rem;"></i>
+                                <span>ブラウザで動作</span>
+                            </div>
+                            <div class="webxr-benefit-item" style="padding: 0.7rem; flex: 1; min-width: 120px;">
+                                <i class="fa-solid fa-mobile-screen" style="font-size: 1.8rem; color: var(--neon-blue); display: block; margin-bottom: 0.5rem;"></i>
+                                <span>複数デバイス対応</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="webxr-usage-guide" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem;">
+                        <div class="device-guide" style="flex: 1; min-width: 280px; background: rgba(20, 20, 50, 0.4); padding: 1.5rem; border-radius: 12px; border-top: 3px solid var(--neon-purple);">
+                            <h4 style="display: flex; align-items: center; margin-bottom: 1rem;"><i class="fa-solid fa-vr-cardboard" style="margin-right: 0.5rem; color: var(--neon-purple);"></i>対応デバイス・ブラウザ</h4>
+                            <div class="browser-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem;">
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-solid fa-vr-cardboard" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">Meta Quest</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">Meta Quest Browser</span>
+                                    </div>
+                                </div>
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-solid fa-cube" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">PICO</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">PICO Browser</span>
+                                    </div>
+                                </div>
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-brands fa-apple" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">Vision Pro</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">Safari</span>
+                                    </div>
+                                </div>
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-solid fa-mobile-alt" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">モバイル</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">Android Chrome<BR>iOS (WebXR Viewer)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="launch-guide" style="flex: 1; min-width: 280px; background: rgba(20, 20, 50, 0.4); padding: 1.5rem; border-radius: 12px; border-top: 3px solid var(--neon-green);">
+                            <h4 style="display: flex; align-items: center; margin-bottom: 1rem;"><i class="fa-solid fa-play" style="margin-right: 0.5rem; color: var(--neon-green);"></i>起動手順</h4>
+                            <ul style="list-style-type: none; padding: 0; margin: 0;">
+                                <li style="display: flex; align-items: center; margin-bottom: 1rem; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">1</div>
+                                    <span>対応デバイスのブラウザでこのサイトを開く</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 1rem; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">2</div>
+                                    <span>WebXR対応ゲームの「今すぐプレイ」ボタンをタップ</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 1rem; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">3</div>
+                                    <span>VRモード/MRモード開始ボタンを押す</span>
+                                </li>
+                                <li style="display: flex; align-items: center; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">4</div>
+                                    <span>ブラウザの権限リクエストを許可</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section - XRプロジェクトの後に移動 -->
+    <section class="hero creator-intro">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content slide-right">
+                    <h1 class="hero-title" itemprop="headline">ミスターVR</h1>
+                    <h2 class="hero-subtitle" itemprop="alternativeHeadline">VR/XR技術を探求する実況者・クリエイター</h2>
+                    <p class="hero-text" itemprop="description">
+                        最新VR技術をわかりやすく発信。WebXRゲーム開発から大人向けVRコンテンツまで、VRの多彩な楽しみ方をお届けします。
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@MrVR" class="social-link" target="_blank" rel="noopener" aria-label="YouTube" itemprop="sameAs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/3DVR3" class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter) - ミスターVR" itemprop="sameAs">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@mister_vr" class="social-link" target="_blank" rel="noopener" aria-label="TikTok" itemprop="sameAs">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr.virtual_reality/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram" itemprop="sameAs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image slide-left">
+                    <img src="assets/images/mrvr_character.webp" alt="ミスターVRキャラクター" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SNS Channels Section -->
+    <section class="channels">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>SNSチャンネル</h2>
+                <p class="section-subtitle">最新情報を発信中</p>
+            </div>
+            
+            <div class="channels-container">
+                <div class="channel-card slide-up">
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <h3 class="channel-title"><a href="https://www.youtube.com/@MrVR" target="_blank" rel="noopener">YouTube</a></h3>
+                    </div>
+                    
+                    <div class="channel-content">
+                        <div class="youtube-embed">
+                            <!-- YouTube チャンネル埋め込み -->
+                            <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLELr2GzmsgfKThUm_h5bS7vydhLCqID2w" title="YouTube チャンネル" style="border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="channel-card slide-up" data-delay="0.2s">
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <h3 class="channel-title"><a href="https://twitter.com/3DVR3" target="_blank" rel="noopener">Twitter/X</a></h3>
+                    </div>
+                    
+                    <div class="channel-content">
+                        <a class="twitter-timeline" data-height="500" href="https://twitter.com/3DVR3?ref_src=twsrc%5Etfw">Tweets by ミスターVR</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+                
+                <div class="channel-card slide-up" data-delay="0.4s">
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </div>
+                        <h3 class="channel-title"><a href="https://www.tiktok.com/@mister_vr" target="_blank" rel="noopener">TikTok</a></h3>
+                    </div>
+                    
+                    <div class="channel-content">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mister_vr/video/7289880250387860737" data-video-id="7289880250387860737">
+                            <section>
+                                <a href="https://www.tiktok.com/@mister_vr/video/7289880250387860737">ミスターVRのTikTok動画を見る</a>
+                            </section>
+                        </blockquote>
+                        <script async src="https://www.tiktok.com/embed.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo_primary.webp" alt="ミスターVRロゴ">
+                    </div>
+                    <p class="footer-about">
+                        VR/XR技術を探求する実況者・クリエイター。<br>
+                        最新VR技術の魅力を発信しています。
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@MrVR" class="social-link" target="_blank" rel="noopener" aria-label="YouTube" itemprop="sameAs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/3DVR3" class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter) - ミスターVR" itemprop="sameAs">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@mister_vr" class="social-link" target="_blank" rel="noopener" aria-label="TikTok" itemprop="sameAs">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr.virtual_reality/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram" itemprop="sameAs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 ミスターVR. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="sitemap.xml" target="_blank" rel="nofollow">サイトマップ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- 3D背景生成スクリプト -->
+    <script>
+        // 粒子効果の生成
+        document.addEventListener('DOMContentLoaded', function() {
+            const particleContainer = document.getElementById('particleContainer');
+            const numberOfParticles = 30;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // ランダムな位置と動きを設定
+                const xStart = Math.random() * 100;
+                const yStart = Math.random() * 100;
+                const xEnd = Math.random() * 100;
+                const yEnd = Math.random() * 100;
+                
+                particle.style.setProperty('--x-start', `${xStart}vw`);
+                particle.style.setProperty('--y-start', `${yStart}vh`);
+                particle.style.setProperty('--x-end', `${xEnd}vw`);
+                particle.style.setProperty('--y-end', `${yEnd}vh`);
+                
+                // アニメーション遅延をランダムに設定
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                // サイズをランダムに設定
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particleContainer.appendChild(particle);
+            }
+            
+            // グリッド線の生成
+            const gridContainer = document.getElementById('gridContainer');
+            const gridSpacing = 50;
+            const gridSize = 10;
+            
+            // 水平線の生成
+            for (let i = 0; i <= gridSize; i++) {
+                const gridLineX = document.createElement('div');
+                gridLineX.classList.add('grid-line-x');
+                gridLineX.style.top = `${(i * gridSpacing)}px`;
+                gridContainer.appendChild(gridLineX);
+            }
+            
+            // 垂直線の生成
+            for (let i = 0; i <= gridSize; i++) {
+                const gridLineZ = document.createElement('div');
+                gridLineZ.classList.add('grid-line-z');
+                gridLineZ.style.left = `${(i * gridSpacing)}px`;
+                gridContainer.appendChild(gridLineZ);
+            }
+        });
+
+        // フィルター機能
+        document.addEventListener('DOMContentLoaded', function() {
+            // プロジェクトフィルター機能は main.js で管理するため削除
+        });
+    </script>
+
+    <style>
+    @keyframes button-shine {
+        0% {
+            left: -100%;
+        }
+        20% {
+            left: 100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+    </style>
+    
+    <!-- JSON-LD構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "WebXRで遊ぼう！VRゲームセンター | ミスターVR公式",
+        "url": "https://mrvr.jp/",
+        "description": "ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。様々なVRデバイスに対応。",
+        "inLanguage": "ja-JP",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://mrvr.jp/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ミスターVR",
+        "url": "https://mrvr.jp/",
+        "logo": "https://mrvr.jp/assets/images/logo_primary.webp",
+        "description": "VR/XRコンテンツクリエイター・配信者。最新のVR技術とゲーム体験を共有",
+        "sameAs": [
+            "https://www.youtube.com/@MrVR-tt3sq",
+            "https://twitter.com/3DVR3",
+            "https://www.tiktok.com/@mister_vr",
+            "https://www.instagram.com/mr.virtual_reality/"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "ミスター秘密侵入VR",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "Meta Quest, PC VR",
+                    "inLanguage": "ja-JP",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "MRオセロ",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "WebXR対応ブラウザ",
+                    "inLanguage": "ja-JP",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Service Worker登録 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker登録成功: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker登録失敗: ', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

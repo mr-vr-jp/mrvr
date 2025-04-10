@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オフライン | WebXRゲームセンター</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #0a0a14;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00e5ff, #7eff03);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #0b1448, #3a0987);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+        }
+        
+        .vr-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #00e5ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="vr-icon">🥽</div>
+        <h1>オフラインです</h1>
+        <p>現在インターネットに接続されていないため、WebXRゲームセンターにアクセスできません。インターネット接続を確認して再度お試しください。</p>
+        <a href="/" class="btn">再読み込み</a>
+    </div>
+    
+    <script>
+        // ネットワーク接続が復旧したら自動的にリロード
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+        
+        // 再読み込みボタン
+        document.querySelector('.btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.reload();
+        });
+    </script>
+</body>
+</html> 
