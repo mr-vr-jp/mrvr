@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Allow: /en/
+Allow: /zh/
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# 画像とリソースへのアクセスを許可
+Allow: /assets/images/
+Allow: /manifest.json
+
+# スクリプトとスタイルからインデックスを除外
+Noindex: /assets/js/
+Noindex: /assets/css/
+
+# 中国のクローラー向け最適化
+User-agent: Baiduspider
+Allow: /
+Allow: /zh/
+Crawl-delay: 5
+
+# クロール遅延（一般的な検索エンジン向け）
+Crawl-delay: 10
+
+# サイトマップ
+Sitemap: https://mrvr.jp/sitemap.xml 

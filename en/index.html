@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-US" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play VR/MR games in your browser. Free VR game arcade powered by WebXR. Compatible with Meta Quest, PICO, Vision Pro and other VR devices. Mr. VR Official Site for English users.">
+    <meta name="keywords" content="WebXR, VR games, MR games, Mr. VR, VR, AR, MR, XR, Virtual Reality, VR content, Browser VR, WebVR, English VR games">
+    <meta name="author" content="Mr. VR">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="site ownership verification code">
+    <meta name="msvalidate.01" content="Bing ownership verification code">
+    <meta name="yandex-verification" content="Yandex ownership verification code">
+    
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Play with WebXR! VR Game Arcade | Mr. VR Official">
+    <meta property="og:description" content="Play VR/MR games in your browser. Free VR game arcade powered by WebXR. Compatible with Meta Quest, PICO, Vision Pro and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrvr.jp/en/">
+    <meta property="og:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta property="og:site_name" content="Play with WebXR! VR Game Arcade">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Play with WebXR! VR Game Arcade - VR/MR games playable in browser">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@3DVR3">
+    <meta name="twitter:title" content="Play with WebXR! VR Game Arcade | Mr. VR Official">
+    <meta name="twitter:description" content="Play VR/MR games in your browser. Free VR game arcade powered by WebXR.">
+    <meta name="twitter:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta name="twitter:creator" content="@3DVR3">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mrvr.jp/en/">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en-US" href="https://mrvr.jp/en/">
+    <link rel="alternate" hreflang="en-GB" href="https://mrvr.jp/en/">
+    <link rel="alternate" hreflang="en-CA" href="https://mrvr.jp/en/">
+    <link rel="alternate" hreflang="en-AU" href="https://mrvr.jp/en/">
+    <link rel="alternate" hreflang="ja" href="https://mrvr.jp/">
+    <link rel="alternate" hreflang="zh-CN" href="https://mrvr.jp/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://mrvr.jp/">
+    
+    <!-- Related Links -->
+    <link rel="preconnect" href="https://mr-othello.netlify.app">
+    <link rel="preconnect" href="https://mr-vr-jp.github.io">
+    <link rel="dns-prefetch" href="https://mr-othello.netlify.app">
+    <link rel="dns-prefetch" href="https://mr-vr-jp.github.io">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://www.twitter.com">
+    
+    <!-- Security -->
+    <meta name="csrf-token" content="VR Game Arcade CSRF Token">
+    
+    <!-- Mobile App Related -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="WebXR Game Arcade">
+    <meta name="application-name" content="WebXR Game Arcade">
+    <meta name="theme-color" content="#0a0a14">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../assets/images/icon-192x192.png">
+    
+    <title>Play with WebXR! VR Game Arcade | Mr. VR Official</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Futuristic 3D Background Effect -->
+    <div class="particle-background" id="particleContainer"></div>
+    <div class="grid-lines">
+        <div class="grid-container" id="gridContainer"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="../assets/images/logo_primary.webp" alt="Mr. VR Logo">
+                </a>
+            </div>
+            
+            <button class="hamburger" aria-expanded="false" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <ul class="navbar-nav">
+                <!-- Home link removed -->
+                <li class="nav-item">
+                    <a href="#xr-projects" class="nav-link" itemprop="url">
+                        <i class="fa-solid fa-vr-cardboard"></i> <span itemprop="name">WebXR Games</span>
+                    </a>
+                </li>
+                <li class="nav-item language-selector">
+                    <a href="#" class="nav-link language-toggle" itemprop="url">
+                        <i class="fa-solid fa-globe"></i> <span itemprop="name">EN</span>
+                    </a>
+                    <ul class="language-dropdown">
+                        <li><a href="../index.html" data-lang="ja">日本語</a></li>
+                        <li><a href="index.html" class="active" data-lang="en">English</a></li>
+                        <li><a href="../zh/index.html" data-lang="zh">中文</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- WebXR Game Banner - Moved to top -->
+    <section class="webxr-banner hero-webxr fade-in" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; border-top: none; padding: 0; margin-bottom: 0; padding-top: 80px;">
+        <div class="container">
+            <div class="webxr-banner-content fade-in" style="max-width: 900px; padding: 3rem; background: rgba(30, 30, 60, 0.6); border-radius: 16px; box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); backdrop-filter: blur(10px); border: 1px solid rgba(0, 229, 255, 0.1);">
+                <div class="webxr-badge-large fade-in">
+                    <span class="badge-icon"><i class="fa-solid fa-vr-cardboard"></i></span>
+                    <span class="badge-text">WebXR Compatible</span>
+                </div>
+                <h2 style="background: linear-gradient(to right, var(--neon-blue), var(--neon-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">VR/MR Games Playable in Browser</h2>
+                <p>Play directly from your VR device. No installation required!</p>
+                <div class="webxr-banner-buttons">
+                    <a href="#xr-projects" class="btn btn-play vr-launch-btn pulse-animation" style="position: relative; overflow: hidden;">
+                        <i class="fa-solid fa-vr-cardboard"></i> Check Games
+                        <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%); animation: button-shine 3s infinite; pointer-events: none;"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games" id="xr-projects">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>XR Projects</h2>
+                <p class="section-subtitle">Latest VR & MR Experiences</p>
+            </div>
+            
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="vr">VR</button>
+                <button class="filter-btn" data-filter="mr">MR</button>
+                <button class="filter-btn" data-filter="webxr">WebXR</button>
+                <button class="filter-btn" data-filter="supervised">Supervised</button>
+                <button class="filter-btn" data-filter="original">Original</button>
+            </div>
+            
+            <div class="projects-container">
+                <div class="project-card slide-up" data-category="vr supervised" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-badge">Supervised</div>
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="../assets/images/mrsecret_vr_widescreen.webp" alt="Mr. Secret Infiltration VR Game Screen 1" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/slide_game_1.webp" alt="Mr. Secret Infiltration VR Game Screen 2">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/slide_game_2.webp" alt="Mr. Secret Infiltration VR Game Screen 3">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/slide_game_3.webp" alt="Mr. Secret Infiltration VR Game Screen 4">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/slide_game_4.webp" alt="Mr. Secret Infiltration VR Game Screen 5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">Mr. Secret Infiltration VR</h3>
+                        <p class="project-desc" itemprop="description">
+                            A new stealth action game that maximizes the strengths of VR! A popular title supervised by Mr. VR.
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="Meta Quest Compatible" itemprop="operatingSystem">
+                                <i class="fa-solid fa-vr-cardboard"></i> Quest
+                            </span>
+                            <span class="device-icon" title="PC VR Compatible" itemprop="operatingSystem">
+                                <i class="fa-solid fa-desktop"></i> PCVR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="VR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://mr-vr-jp.github.io/mrsecret-vr/" class="btn btn-secondary" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-book"></i> Official Manual
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-badge">Latest</div>
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="../assets/images/background.webp" alt="MR Othello Main Screen" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/mr_othello_gameplay.jpg" alt="MR Othello Gameplay">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">MR Othello</h3>
+                        <p class="project-desc" itemprop="description">
+                            An immersive Othello game utilizing WebXR. Play with a virtual Othello board placed in your real space.
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="Developed with WebXR technology" itemprop="operatingSystem">
+                                <i class="fa-solid fa-globe"></i> WebXR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="MR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://mr-othello.netlify.app/" class="btn btn-play vr-launch-btn" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-vr-cardboard"></i> Play Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="webxr-guide fade-in">
+                <h3>How to Launch WebXR Compatible Apps</h3>
+                <div class="guide-content">
+                    <h4>What is WebXR?</h4>
+                    <div class="webxr-explanation" style="background: rgba(20, 20, 50, 0.4); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 3px solid var(--neon-blue);">
+                        <p>WebXR is a technology that allows you to experience VR (Virtual Reality) and MR (Mixed Reality) directly from your browser without installing special apps.</p>
+                        <div class="webxr-benefits" style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 1.5rem 0; text-align: center;">
+                            <div class="webxr-benefit-item" style="padding: 0.7rem; flex: 1; min-width: 120px;">
+                                <i class="fa-solid fa-download" style="font-size: 1.8rem; color: var(--neon-blue); display: block; margin-bottom: 0.5rem;"></i>
+                                <span>No Installation Required</span>
+                            </div>
+                            <div class="webxr-benefit-item" style="padding: 0.7rem; flex: 1; min-width: 120px;">
+                                <i class="fa-solid fa-globe" style="font-size: 1.8rem; color: var(--neon-blue); display: block; margin-bottom: 0.5rem;"></i>
+                                <span>Works in Browser</span>
+                            </div>
+                            <div class="webxr-benefit-item" style="padding: 0.7rem; flex: 1; min-width: 120px;">
+                                <i class="fa-solid fa-mobile-screen" style="font-size: 1.8rem; color: var(--neon-blue); display: block; margin-bottom: 0.5rem;"></i>
+                                <span>Multi-Device Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="webxr-usage-guide" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem;">
+                        <div class="device-guide" style="flex: 1; min-width: 280px; background: rgba(20, 20, 50, 0.4); padding: 1.5rem; border-radius: 12px; border-top: 3px solid var(--neon-purple);">
+                            <h4 style="display: flex; align-items: center; margin-bottom: 1rem;"><i class="fa-solid fa-vr-cardboard" style="margin-right: 0.5rem; color: var(--neon-purple);"></i>Compatible Devices & Browsers</h4>
+                            <div class="browser-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem;">
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-solid fa-vr-cardboard" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">Meta Quest</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">Meta Quest Browser</span>
+                                    </div>
+                                </div>
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-solid fa-cube" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">PICO</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">PICO Browser</span>
+                                    </div>
+                                </div>
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-brands fa-apple" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">Vision Pro</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">Safari</span>
+                                    </div>
+                                </div>
+                                <div class="browser-item" style="display: flex; align-items: center; padding: 0.5rem; background: rgba(30, 30, 70, 0.3); border-radius: 8px;">
+                                    <i class="fa-solid fa-mobile-alt" style="margin-right: 0.7rem; color: var(--neon-blue); font-size: 1.2rem;"></i>
+                                    <div>
+                                        <span class="browser-device" style="font-weight: bold; display: block;">Mobile</span>
+                                        <span style="font-size: 0.85rem; opacity: 0.9;">Android Chrome<BR>iOS (WebXR Viewer)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="launch-guide" style="flex: 1; min-width: 280px; background: rgba(20, 20, 50, 0.4); padding: 1.5rem; border-radius: 12px; border-top: 3px solid var(--neon-green);">
+                            <h4 style="display: flex; align-items: center; margin-bottom: 1rem;"><i class="fa-solid fa-play" style="margin-right: 0.5rem; color: var(--neon-green);"></i>Launch Steps</h4>
+                            <ul style="list-style-type: none; padding: 0; margin: 0;">
+                                <li style="display: flex; align-items: center; margin-bottom: 1rem; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">1</div>
+                                    <span>Open this site in your compatible device's browser</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 1rem; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">2</div>
+                                    <span>Tap the "Play Now" button on a WebXR compatible game</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 1rem; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">3</div>
+                                    <span>Press the VR Mode/MR Mode start button</span>
+                                </li>
+                                <li style="display: flex; align-items: center; position: relative;">
+                                    <div style="min-width: 28px; height: 28px; background: var(--neon-green); color: var(--dark-bg-1); border-radius: 50%; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem;">4</div>
+                                    <span>Allow browser permission requests</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section - Moved after XR Projects -->
+    <section class="hero creator-intro">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content slide-right">
+                    <h1 class="hero-title" itemprop="headline">Mr. VR</h1>
+                    <h2 class="hero-subtitle" itemprop="alternativeHeadline">VR/XR Content Creator & Streamer</h2>
+                    <p class="hero-text" itemprop="description">
+                        Sharing the latest VR technology in an easy-to-understand way. From WebXR game development to adult VR content, delivering various ways to enjoy VR.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@MrVR-tt3sq" class="social-link" target="_blank" rel="noopener" aria-label="YouTube" itemprop="sameAs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/3DVR3" class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter) - Mr. VR" itemprop="sameAs">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@mister_vr" class="social-link" target="_blank" rel="noopener" aria-label="TikTok" itemprop="sameAs">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr.virtual_reality/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram" itemprop="sameAs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image slide-left">
+                    <img src="../assets/images/mrvr_character.webp" alt="Mr. VR Character">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SNS Channels Section -->
+    <section class="channels">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>SNS Channels</h2>
+                <p class="section-subtitle">Latest Updates</p>
+            </div>
+            
+            <div class="channels-container">
+                <div class="channel-card slide-up">
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <h3 class="channel-title"><a href="https://www.youtube.com/@MrVR-tt3sq" target="_blank" rel="noopener">YouTube</a></h3>
+                    </div>
+                    
+                    <div class="channel-content">
+                        <div class="youtube-embed">
+                            <!-- YouTube Channel Embed -->
+                            <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/vEkhcpvQIUk" title="YouTube Video" style="border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="channel-card slide-up" data-delay="0.2s">
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <h3 class="channel-title"><a href="https://twitter.com/3DVR3" target="_blank" rel="noopener">Twitter/X</a></h3>
+                    </div>
+                    
+                    <div class="channel-content">
+                        <a class="twitter-timeline" data-height="500" href="https://twitter.com/3DVR3?ref_src=twsrc%5Etfw">Tweets by Mr. VR</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+                
+                <div class="channel-card slide-up" data-delay="0.4s">
+                    <div class="channel-header">
+                        <div class="channel-icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </div>
+                        <h3 class="channel-title"><a href="https://www.tiktok.com/@mister_vr" target="_blank" rel="noopener">TikTok</a></h3>
+                    </div>
+                    
+                    <div class="channel-content">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mister_vr/video/7289880250387860737" data-video-id="7289880250387860737">
+                            <section>
+                                <a href="https://www.tiktok.com/@mister_vr/video/7289880250387860737">Watch Mr. VR's TikTok video</a>
+                            </section>
+                        </blockquote>
+                        <script async src="https://www.tiktok.com/embed.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../assets/images/logo_primary.webp" alt="Mr. VR Logo">
+                    </div>
+                    <p class="footer-about">
+                        VR/XR Content Creator & Streamer.<br>
+                        Sharing the charm of the latest VR technology.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@MrVR-tt3sq" class="social-link" target="_blank" rel="noopener" aria-label="YouTube" itemprop="sameAs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/3DVR3" class="social-link" target="_blank" rel="noopener" aria-label="X (Twitter) - Mr. VR" itemprop="sameAs">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@mister_vr" class="social-link" target="_blank" rel="noopener" aria-label="TikTok" itemprop="sameAs">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mr.virtual_reality/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram" itemprop="sameAs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Mr. VR. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="../sitemap.xml" target="_blank" rel="nofollow">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/main.js"></script>
+    
+    <!-- 3D Background Generation Script -->
+    <script>
+        // Particle effect generation
+        document.addEventListener('DOMContentLoaded', function() {
+            const particleContainer = document.getElementById('particleContainer');
+            const numberOfParticles = 30;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Set random position and movement
+                const xStart = Math.random() * 100;
+                const yStart = Math.random() * 100;
+                const xEnd = Math.random() * 100;
+                const yEnd = Math.random() * 100;
+                
+                particle.style.setProperty('--x-start', `${xStart}vw`);
+                particle.style.setProperty('--y-start', `${yStart}vh`);
+                particle.style.setProperty('--x-end', `${xEnd}vw`);
+                particle.style.setProperty('--y-end', `${yEnd}vh`);
+                
+                // Set random animation delay
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                // Set random size
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particleContainer.appendChild(particle);
+            }
+            
+            // Generate grid lines
+            const gridContainer = document.getElementById('gridContainer');
+            const gridSpacing = 50;
+            const gridSize = 10;
+            
+            // Generate horizontal lines
+            for (let i = 0; i <= gridSize; i++) {
+                const gridLineX = document.createElement('div');
+                gridLineX.classList.add('grid-line-x');
+                gridLineX.style.top = `${(i * gridSpacing)}px`;
+                gridContainer.appendChild(gridLineX);
+            }
+            
+            // Generate vertical lines
+            for (let i = 0; i <= gridSize; i++) {
+                const gridLineZ = document.createElement('div');
+                gridLineZ.classList.add('grid-line-z');
+                gridLineZ.style.left = `${(i * gridSpacing)}px`;
+                gridContainer.appendChild(gridLineZ);
+            }
+        });
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Project filter functionality is managed in main.js
+        });
+    </script>
+
+    <style>
+    @keyframes button-shine {
+        0% {
+            left: -100%;
+        }
+        20% {
+            left: 100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Play with WebXR! VR Game Arcade | Mr. VR Official",
+        "url": "https://mrvr.jp/en/",
+        "description": "Play VR/MR games in your browser. Free VR game arcade powered by WebXR. Compatible with various VR devices.",
+        "inLanguage": "en-US",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://mrvr.jp/en/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mr. VR",
+        "url": "https://mrvr.jp/en/",
+        "logo": "https://mrvr.jp/assets/images/logo_primary.webp",
+        "description": "VR/XR Content Creator and Streamer sharing the latest VR technology and gaming experiences",
+        "sameAs": [
+            "https://www.youtube.com/@MrVR-tt3sq",
+            "https://twitter.com/3DVR3",
+            "https://www.tiktok.com/@mister_vr",
+            "https://www.instagram.com/mr.virtual_reality/"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Mr. Secret Infiltration VR",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "Meta Quest, PC VR",
+                    "inLanguage": "en-US",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "MR Othello",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "WebXR compatible browsers",
+                    "inLanguage": "en-US",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html> 
