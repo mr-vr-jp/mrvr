@@ -18,7 +18,7 @@
     <meta property="og:description" content="在浏览器中玩VR/MR游戏。WebXR驱动的免费VR游戏中心。兼容Meta Quest、PICO、Vision Pro等。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mrvr.jp/zh/">
-    <meta property="og:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta property="og:image" content="https://mrvr.jp/assets/images/mr_othello_package.webp">
     <meta property="og:site_name" content="用WebXR玩游戏！VR游戏中心">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:locale:alternate" content="ja_JP">
@@ -32,7 +32,7 @@
     <meta name="twitter:site" content="@3DVR3">
     <meta name="twitter:title" content="用WebXR玩游戏！VR游戏中心 | VR大先生官方">
     <meta name="twitter:description" content="在浏览器中玩VR/MR游戏。WebXR驱动的免费VR游戏中心。">
-    <meta name="twitter:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta name="twitter:image" content="https://mrvr.jp/assets/images/mr_othello_package.webp">
     <meta name="twitter:creator" content="@3DVR3">
     
     <!-- Canonical URL -->
@@ -206,11 +206,46 @@
                 </div>
                 
                 <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="project-badge">最新作品</div>
+                    <div class="project-badge">新作品</div>
                     <div class="project-image">
                         <div class="slideshow-container">
                             <div class="slideshow-slide active">
-                                <img src="../assets/images/background.webp" alt="MR黑白棋主画面" itemprop="image">
+                                <img src="../assets/images/solar_explorer_xr_package.webp" alt="太阳系探索XR主画面" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/solar_explorer_xr_gameplay.webp" alt="太阳系探索XR游戏画面">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">太阳系探索XR</h3>
+                        <p class="project-desc" itemprop="description">
+                            通过WebXR实现的太阳系沉浸式体验。在现实空间中显现太阳系，近距离观察行星。
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="使用WebXR技术开发" itemprop="operatingSystem">
+                                <i class="fa-solid fa-globe"></i> WebXR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="MR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://solar-explorer-xr.netlify.app/" class="btn btn-play vr-launch-btn" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-vr-cardboard"></i> 立即游玩
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="../assets/images/mr_othello_package.webp" alt="MR黑白棋主画面" itemprop="image">
                             </div>
                             <div class="slideshow-slide">
                                 <img src="../assets/images/mr_othello_gameplay.jpg" alt="MR黑白棋游戏画面">
@@ -598,6 +633,22 @@
             {
                 "@type": "ListItem",
                 "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "太阳系探索XR",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "支持WebXR的浏览器",
+                    "inLanguage": "zh-CN",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
                 "item": {
                     "@type": "SoftwareApplication",
                     "name": "MR黑白棋",

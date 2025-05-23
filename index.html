@@ -17,7 +17,7 @@
     <meta property="og:description" content="ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。Meta Quest、PICO、Vision Proなどに対応。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mrvr.jp/">
-    <meta property="og:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta property="og:image" content="https://mrvr.jp/assets/images/mr_othello_package.webp">
     <meta property="og:site_name" content="WebXRで遊ぼう！VRゲームセンター">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="en_US">
@@ -31,7 +31,7 @@
     <meta name="twitter:site" content="@3DVR3">
     <meta name="twitter:title" content="WebXRで遊ぼう！VRゲームセンター | ミスターVR公式">
     <meta name="twitter:description" content="ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。">
-    <meta name="twitter:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta name="twitter:image" content="https://mrvr.jp/assets/images/mr_othello_package.webp">
     <meta name="twitter:creator" content="@3DVR3">
     
     <!-- Canonical URL -->
@@ -205,11 +205,46 @@
                 </div>
                 
                 <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="project-badge">最新作</div>
+                    <div class="project-badge">新作</div>
                     <div class="project-image">
                         <div class="slideshow-container">
                             <div class="slideshow-slide active">
-                                <img src="assets/images/background.webp" alt="MRオセロ メイン画面" itemprop="image">
+                                <img src="assets/images/solar_explorer_xr_package.webp" alt="太陽系探索XR メイン画面" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="assets/images/solar_explorer_xr_gameplay.webp" alt="太陽系探索XR ゲームプレイ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">太陽系探索XR</h3>
+                        <p class="project-desc" itemprop="description">
+                            WebXRで実現する太陽系の没入体験。現実空間に太陽系を出現させて、惑星を間近で観察できます。
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="WebXR技術で開発" itemprop="operatingSystem">
+                                <i class="fa-solid fa-globe"></i> WebXR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="MR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://solar-explorer-xr.netlify.app/" class="btn btn-play" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-vr-cardboard"></i> 今すぐプレイ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="assets/images/mr_othello_package.webp" alt="MRオセロ メイン画面" itemprop="image">
                             </div>
                             <div class="slideshow-slide">
                                 <img src="assets/images/mr_othello_gameplay.jpg" alt="MRオセロ ゲームプレイ">
@@ -593,6 +628,22 @@
             {
                 "@type": "ListItem",
                 "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "太陽系探索XR",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "WebXR対応ブラウザ",
+                    "inLanguage": "ja-JP",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
                 "item": {
                     "@type": "SoftwareApplication",
                     "name": "MRオセロ",

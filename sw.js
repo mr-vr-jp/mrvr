@@ -9,7 +9,7 @@ const URLS_TO_CACHE = [
   '/assets/css/style.css',
   '/assets/js/main.js',
   '/assets/images/logo_primary.webp',
-  '/assets/images/background.webp',
+  '/assets/images/mr_othello_package.webp',
   '/assets/images/mrvr_character.webp',
   '/assets/images/mrsecret_vr_widescreen.webp',
   '/assets/images/mr_othello_gameplay.jpg',
@@ -18,7 +18,9 @@ const URLS_TO_CACHE = [
   '/assets/images/slide_game_3.webp',
   '/assets/images/slide_game_4.webp',
   '/assets/images/logo_secondary.webp',
-  '/assets/images/mrsecret_vr_logo.webp'
+  '/assets/images/mrsecret_vr_logo.webp',
+  '/assets/images/solar_explorer_xr_package.webp',
+  '/assets/images/solar_explorer_xr_gameplay.webp'
 ];
 
 // インストール時にリソースをキャッシュ

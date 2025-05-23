@@ -354,6 +354,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const projectCards = document.querySelectorAll('.project-card');
         
         if (filterBtns.length && projectCards.length) {
+            // 初期化: すべてのカードに基本スタイルを設定
+            projectCards.forEach(card => {
+                card.style.transition = 'all 0.3s ease';
+            });
+            
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     // アクティブクラスの切り替え
@@ -362,24 +367,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const filter = btn.getAttribute('data-filter');
                     
-                    // スムーズなトランジションでプロジェクトカードをフィルタリング
+                    // 最初にすべてのカードを即座に非表示にしてからフィルタリング
                     projectCards.forEach(card => {
-                        const categories = card.getAttribute('data-category');
-                        
-                        if (filter === 'all' || categories.includes(filter)) {
-                            card.style.display = 'flex';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
                     });
+                    
+                    // アニメーション完了後にフィルタリング
+                    setTimeout(() => {
+                        projectCards.forEach(card => {
+                            const categories = card.getAttribute('data-category');
+                            
+                            if (filter === 'all' || categories.includes(filter)) {
+                                card.style.display = 'flex';
+                                // 順次表示するためのディレイ
+                                const index = Array.from(projectCards).indexOf(card);
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, index * 100);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }, 200);
                 });
             });
         }

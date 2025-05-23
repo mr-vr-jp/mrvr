@@ -17,7 +17,7 @@
     <meta property="og:description" content="Play VR/MR games in your browser. Free VR game arcade powered by WebXR. Compatible with Meta Quest, PICO, Vision Pro and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mrvr.jp/en/">
-    <meta property="og:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta property="og:image" content="https://mrvr.jp/assets/images/mr_othello_package.webp">
     <meta property="og:site_name" content="Play with WebXR! VR Game Arcade">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="ja_JP">
@@ -31,7 +31,7 @@
     <meta name="twitter:site" content="@3DVR3">
     <meta name="twitter:title" content="Play with WebXR! VR Game Arcade | Mr. VR Official">
     <meta name="twitter:description" content="Play VR/MR games in your browser. Free VR game arcade powered by WebXR.">
-    <meta name="twitter:image" content="https://mrvr.jp/assets/images/background.webp">
+    <meta name="twitter:image" content="https://mrvr.jp/assets/images/mr_othello_package.webp">
     <meta name="twitter:creator" content="@3DVR3">
     
     <!-- Canonical URL -->
@@ -207,11 +207,46 @@
                 </div>
                 
                 <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
-                    <div class="project-badge">Latest</div>
+                    <div class="project-badge">New</div>
                     <div class="project-image">
                         <div class="slideshow-container">
                             <div class="slideshow-slide active">
-                                <img src="../assets/images/background.webp" alt="MR Othello Main Screen" itemprop="image">
+                                <img src="../assets/images/solar_explorer_xr_package.webp" alt="Solar System Explorer XR Main Screen" itemprop="image">
+                            </div>
+                            <div class="slideshow-slide">
+                                <img src="../assets/images/solar_explorer_xr_gameplay.webp" alt="Solar System Explorer XR Gameplay">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" itemprop="name">Solar System Explorer XR</h3>
+                        <p class="project-desc" itemprop="description">
+                            An immersive solar system experience realized with WebXR. Bring the solar system into your real space and observe planets up close.
+                        </p>
+                        <div class="device-support">
+                            <span class="device-icon" title="Developed with WebXR technology" itemprop="operatingSystem">
+                                <i class="fa-solid fa-globe"></i> WebXR
+                            </span>
+                        </div>
+                        <meta itemprop="applicationCategory" content="Game" />
+                        <meta itemprop="applicationSubCategory" content="MR Game" />
+                        <meta itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="JPY" />
+                        <meta itemprop="availability" content="https://schema.org/OnlineOnly" />
+                        <div class="project-actions">
+                            <a href="https://solar-explorer-xr.netlify.app/" class="btn btn-play vr-launch-btn" target="_blank" rel="noopener" itemprop="url">
+                                <i class="fa-solid fa-vr-cardboard"></i> Play Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card slide-up" data-category="mr original webxr" itemscope itemtype="https://schema.org/SoftwareApplication">
+                    <div class="project-image">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slide active">
+                                <img src="../assets/images/mr_othello_package.webp" alt="MR Othello Main Screen" itemprop="image">
                             </div>
                             <div class="slideshow-slide">
                                 <img src="../assets/images/mr_othello_gameplay.jpg" alt="MR Othello Gameplay">
@@ -595,6 +630,22 @@
             {
                 "@type": "ListItem",
                 "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Solar System Explorer XR",
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "WebXR compatible browsers",
+                    "inLanguage": "en-US",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "JPY"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
                 "item": {
                     "@type": "SoftwareApplication",
                     "name": "MR Othello",
