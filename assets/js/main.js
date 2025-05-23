@@ -184,7 +184,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            let currentSlide = 0;
+            // 各スライドショー専用の状態管理
+            const slideshowState = {
+                currentSlide: 0,
+                timer: null,
+                isHovered: false,
+                uniqueId: `slideshow-${index}-${Date.now()}`
+            };
+            
+            // スライドショーにユニークIDを設定
+            slideshow.setAttribute('data-slideshow-id', slideshowState.uniqueId);
             
             // 初期状態: 最初のスライドをアクティブに、他は非アクティブに
             slides.forEach((slide, i) => {
@@ -207,14 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // ドットをクリックしたときの処理
                 dot.addEventListener('click', () => {
-                    slides[currentSlide].classList.remove('active');
-                    dotsContainer.querySelectorAll('.slideshow-dot').forEach(dot => dot.classList.remove('active'));
-                    
-                    currentSlide = i;
-                    
-                    slides[currentSlide].classList.add('active');
-                    dotsContainer.querySelectorAll('.slideshow-dot')[currentSlide].classList.add('active');
-                    console.log(`スライドショー #${index+1}: ドットクリックでスライド ${currentSlide+1}に切り替え`);
+                    goToSlide(i);
                 });
                 
                 dotsContainer.appendChild(dot);
@@ -223,28 +225,28 @@ document.addEventListener('DOMContentLoaded', function() {
             // ドットコンテナをスライドショーに追加
             slideshow.appendChild(dotsContainer);
             
+            // 指定したスライドに移動する関数
+            const goToSlide = (slideIndex) => {
+                slides[slideshowState.currentSlide].classList.remove('active');
+                dotsContainer.querySelectorAll('.slideshow-dot')[slideshowState.currentSlide].classList.remove('active');
+                
+                slideshowState.currentSlide = slideIndex;
+                
+                slides[slideshowState.currentSlide].classList.add('active');
+                dotsContainer.querySelectorAll('.slideshow-dot')[slideshowState.currentSlide].classList.add('active');
+                console.log(`スライドショー #${index+1}: スライド ${slideshowState.currentSlide+1}に切り替え`);
+            };
+            
             // 次のスライドへ移動する関数
             const nextSlide = () => {
-                slides[currentSlide].classList.remove('active');
-                dotsContainer.querySelectorAll('.slideshow-dot')[currentSlide].classList.remove('active');
-                
-                currentSlide = (currentSlide + 1) % slides.length;
-                
-                slides[currentSlide].classList.add('active');
-                dotsContainer.querySelectorAll('.slideshow-dot')[currentSlide].classList.add('active');
-                console.log(`スライドショー #${index+1}: スライド ${currentSlide+1}に切り替え`);
+                const nextIndex = (slideshowState.currentSlide + 1) % slides.length;
+                goToSlide(nextIndex);
             };
             
             // 前のスライドへ移動する関数
             const prevSlide = () => {
-                slides[currentSlide].classList.remove('active');
-                dotsContainer.querySelectorAll('.slideshow-dot')[currentSlide].classList.remove('active');
-                
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                
-                slides[currentSlide].classList.add('active');
-                dotsContainer.querySelectorAll('.slideshow-dot')[currentSlide].classList.add('active');
-                console.log(`スライドショー #${index+1}: スライド ${currentSlide+1}に切り替え`);
+                const prevIndex = (slideshowState.currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(prevIndex);
             };
             
             // 矢印ナビゲーションを追加
@@ -267,27 +269,65 @@ document.addEventListener('DOMContentLoaded', function() {
             slideshow.appendChild(prevArrow);
             slideshow.appendChild(nextArrow);
             
-            // 自動スライドショーのインターバル設定
-            let slideTimer;
-            
+            // タイマー管理関数
             const startTimer = () => {
-                slideTimer = setInterval(nextSlide, 5000);
+                if (slideshowState.timer) {
+                    clearInterval(slideshowState.timer);
+                }
+                // 各スライドショーに異なる間隔を設定して重複を避ける
+                const interval = 4000 + (index * 500); // 4秒〜6秒の間でずらす
+                slideshowState.timer = setInterval(() => {
+                    if (!slideshowState.isHovered) {
+                        nextSlide();
+                    }
+                }, interval);
             };
             
             const resetTimer = () => {
-                clearInterval(slideTimer);
+                if (slideshowState.timer) {
+                    clearInterval(slideshowState.timer);
+                }
                 startTimer();
+            };
+            
+            const stopTimer = () => {
+                if (slideshowState.timer) {
+                    clearInterval(slideshowState.timer);
+                    slideshowState.timer = null;
+                }
             };
             
             // スライドショーを開始
             startTimer();
             
-            // マウスが乗ったら一時停止、離れたら再開
+            // マウスイベント処理
             slideshow.addEventListener('mouseenter', () => {
-                clearInterval(slideTimer);
+                slideshowState.isHovered = true;
+                stopTimer();
             });
             
             slideshow.addEventListener('mouseleave', () => {
+                slideshowState.isHovered = false;
+                startTimer();
+            });
+            
+            // ページが非表示になったときタイマーを停止
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopTimer();
+                } else if (!slideshowState.isHovered) {
+                    startTimer();
+                }
+            });
+            
+            // カスタムイベントリスナー
+            slideshow.addEventListener('pause-slideshow', () => {
+                slideshowState.isHovered = true;
+                stopTimer();
+            });
+            
+            slideshow.addEventListener('resume-slideshow', () => {
+                slideshowState.isHovered = false;
                 startTimer();
             });
         });
@@ -626,7 +666,9 @@ window.addEventListener('scroll', function() {
         
         // スライドショーのタイマーを一時停止
         document.querySelectorAll('.slideshow-container').forEach(slideshow => {
-            slideshow.dispatchEvent(new Event('mouseenter'));
+            if (slideshow.getAttribute('data-slideshow-id')) {
+                slideshow.dispatchEvent(new CustomEvent('pause-slideshow'));
+            }
         });
         
         // カードのhover状態をリセット（ホバー中にスクロールを開始した場合）
@@ -651,7 +693,9 @@ window.addEventListener('scroll', function() {
         
         // スライドショーのタイマーを再開
         document.querySelectorAll('.slideshow-container').forEach(slideshow => {
-            slideshow.dispatchEvent(new Event('mouseleave'));
+            if (slideshow.getAttribute('data-slideshow-id')) {
+                slideshow.dispatchEvent(new CustomEvent('resume-slideshow'));
+            }
         });
         
         // スクロール終了後にアニメーションを完全に再開
