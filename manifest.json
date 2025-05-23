@@ -26,7 +26,7 @@
   "categories": ["games", "entertainment", "vr"],
   "screenshots": [
     {
-      "src": "assets/images/background.webp",
+      "src": "assets/images/mr_othello_package.webp",
       "sizes": "1280x720",
       "type": "image/webp",
       "platform": "wide",
@@ -38,6 +38,13 @@
       "type": "image/webp",
       "platform": "wide",
       "label": "ミスター秘密侵入VR"
+    },
+    {
+      "src": "assets/images/solar_explorer_xr_package.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "太陽系探索XR"
     }
   ],
   "orientation": "any",

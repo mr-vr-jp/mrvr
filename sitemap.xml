@@ -15,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.jp/"/>
     <image:image>
-      <image:loc>https://mrvr.jp/assets/images/background.webp</image:loc>
+      <image:loc>https://mrvr.jp/assets/images/mr_othello_package.webp</image:loc>
       <image:title>WebXRで遊ぼう！VRゲームセンター</image:title>
     </image:image>
     <image:image>
@@ -40,7 +40,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.jp/"/>
     <image:image>
-      <image:loc>https://mrvr.jp/assets/images/background.webp</image:loc>
+      <image:loc>https://mrvr.jp/assets/images/mr_othello_package.webp</image:loc>
       <image:title>Play with WebXR! VR Game Arcade</image:title>
     </image:image>
     <image:image>
@@ -65,7 +65,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://mrvr.jp/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.jp/"/>
     <image:image>
-      <image:loc>https://mrvr.jp/assets/images/background.webp</image:loc>
+      <image:loc>https://mrvr.jp/assets/images/mr_othello_package.webp</image:loc>
       <image:title>用WebXR玩游戏！VR游戏中心</image:title>
     </image:image>
     <image:image>
@@ -114,6 +114,13 @@
   
   <url>
     <loc>https://mr-othello.netlify.app/</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://solar-explorer-xr.netlify.app/</loc>
     <lastmod>2024-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
