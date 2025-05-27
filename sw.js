@@ -21,7 +21,8 @@ const URLS_TO_CACHE = [
   '/assets/images/mrsecret_vr_logo.webp',
   '/assets/images/solar_explorer_xr_package.webp',
   '/assets/images/solar_explorer_xr_gameplay.webp',
-  '/assets/images/solar_explorer_xr_gameplay_vr.webp'
+  '/assets/images/solar_explorer_xr_gameplay_vr.webp',
+  '/assets/images/og-image-mrvr.jpg'
 ];
 
 // インストール時にリソースをキャッシュ
