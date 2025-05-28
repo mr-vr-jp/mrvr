@@ -5,7 +5,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://mrvr.netlify.app/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/"/>
@@ -30,7 +30,7 @@
   
   <url>
     <loc>https://mrvr.netlify.app/en/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/"/>
@@ -55,7 +55,7 @@
   
   <url>
     <loc>https://mrvr.netlify.app/zh/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/"/>
@@ -80,7 +80,7 @@
   
   <url>
     <loc>https://mrvr.netlify.app/#xr-projects</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.netlify.app/en/#xr-projects"/>
@@ -89,7 +89,7 @@
   
   <url>
     <loc>https://mrvr.netlify.app/en/#xr-projects</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/#xr-projects"/>
@@ -98,7 +98,7 @@
   
   <url>
     <loc>https://mrvr.netlify.app/zh/#xr-projects</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/#xr-projects"/>
@@ -107,21 +107,21 @@
   
   <url>
     <loc>https://mr-vr-jp.github.io/mrsecret-vr/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://mr-othello.netlify.app/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://solar-explorer-xr.netlify.app/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
