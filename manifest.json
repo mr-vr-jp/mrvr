@@ -2,7 +2,7 @@
   "name": "WebXRで遊ぼう！VRゲームセンター | ミスターVR公式",
   "short_name": "WebXRゲームセンター",
   "description": "ブラウザで遊べるVR/MRゲーム。WebXRで動作するVRゲームが無料で遊べるVRゲームセンター。様々なVRデバイスに対応。",
-  "start_url": "/",
+  "start_url": "https://mrvr.netlify.app/",
   "display": "standalone",
   "background_color": "#0a0a14",
   "theme_color": "#00e5ff",
@@ -56,14 +56,14 @@
       "short_name": "WebXR Game Arcade",
       "description": "Play VR/MR games in your browser. Free VR game arcade powered by WebXR. Compatible with various VR devices.",
       "lang": "en-US",
-      "start_url": "/en/"
+      "start_url": "https://mrvr.netlify.app/en/"
     },
     "zh-CN": {
       "name": "用WebXR玩游戏！VR游戏中心 | VR大先生官方",
       "short_name": "WebXR游戏中心",
       "description": "在浏览器中玩VR/MR游戏。WebXR驱动的免费VR游戏中心。兼容各种VR设备。",
       "lang": "zh-CN",
-      "start_url": "/zh/"
+      "start_url": "https://mrvr.netlify.app/zh/"
     }
   }
 } 

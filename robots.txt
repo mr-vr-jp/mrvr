@@ -23,4 +23,4 @@ Crawl-delay: 5
 Crawl-delay: 10
 
 # サイトマップ
-Sitemap: https://mrvr.jp/sitemap.xml 
+Sitemap: https://mrvr.netlify.app/sitemap.xml 
