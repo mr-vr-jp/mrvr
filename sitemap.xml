@@ -1,118 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- メインページ（日本語） -->
   <url>
     <loc>https://mrvr.netlify.app/</loc>
     <lastmod>2025-06-20T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://mrvr.netlify.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrvr.netlify.app/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://mrvr.netlify.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.netlify.app/"/>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mrvr_character.webp</image:loc>
-      <image:title>ミスターVRキャラクター</image:title>
-      <image:caption>WebXRゲーム開発者ミスターVRのキャラクター画像</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mr_othello_package.webp</image:loc>
-      <image:title>MRオセロ - WebXRゲーム</image:title>
-      <image:caption>ブラウザで遊べるWebXR対応のオセロゲーム</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mrsecret_vr_widescreen.webp</image:loc>
-      <image:title>ミスター秘密侵入VR</image:title>
-      <image:caption>Unity製VRゲーム - ミスター秘密侵入VR</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/solar_explorer_xr_package.webp</image:loc>
-      <image:title>Solar Explorer XR</image:title>
-      <image:caption>WebXR対応の太陽系探索ゲーム</image:caption>
-    </image:image>
   </url>
   
+  <!-- 英語ページ -->
   <url>
     <loc>https://mrvr.netlify.app/en/</loc>
     <lastmod>2025-06-20T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://mrvr.netlify.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrvr.netlify.app/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://mrvr.netlify.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.netlify.app/"/>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mr_othello_package.webp</image:loc>
-      <image:title>MR Othello - WebXR Game</image:title>
-      <image:caption>Browser-based WebXR Othello game</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mrsecret_vr_widescreen.webp</image:loc>
-      <image:title>Mr. Secret Infiltration VR</image:title>
-      <image:caption>Unity VR Game - Mr. Secret Infiltration VR</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mrvr_character.webp</image:loc>
-      <image:title>Mr. VR Character</image:title>
-      <image:caption>Mr. VR Character - WebXR Game Developer</image:caption>
-    </image:image>
   </url>
   
+  <!-- 中国語ページ -->
   <url>
     <loc>https://mrvr.netlify.app/zh/</loc>
     <lastmod>2025-06-20T12:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://mrvr.netlify.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mrvr.netlify.app/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://mrvr.netlify.app/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mrvr.netlify.app/"/>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mr_othello_package.webp</image:loc>
-      <image:title>MR奥赛罗 - WebXR游戏</image:title>
-      <image:caption>基于浏览器的WebXR奥赛罗游戏</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mrsecret_vr_widescreen.webp</image:loc>
-      <image:title>秘密潜入VR</image:title>
-      <image:caption>Unity VR游戏 - 秘密潜入VR</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://mrvr.netlify.app/assets/images/mrvr_character.webp</image:loc>
-      <image:title>VR大先生角色</image:title>
-      <image:caption>VR大先生角色 - WebXR游戏开发者</image:caption>
-    </image:image>
   </url>
   
-  <url>
-    <loc>https://mrvr.netlify.app/#xr-projects</loc>
-    <lastmod>2025-06-20T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.netlify.app/en/#xr-projects"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.netlify.app/zh/#xr-projects"/>
-  </url>
-  
-  <url>
-    <loc>https://mrvr.netlify.app/en/#xr-projects</loc>
-    <lastmod>2025-06-20T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/#xr-projects"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://mrvr.netlify.app/zh/#xr-projects"/>
-  </url>
-  
-  <url>
-    <loc>https://mrvr.netlify.app/zh/#xr-projects</loc>
-    <lastmod>2025-06-20T12:00:00+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://mrvr.netlify.app/#xr-projects"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://mrvr.netlify.app/en/#xr-projects"/>
-  </url>
-  
+  <!-- 外部ゲームリンク -->
   <url>
     <loc>https://mr-vr-jp.github.io/mrsecret-vr/</loc>
     <lastmod>2025-06-20T12:00:00+09:00</lastmod>
@@ -133,4 +46,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
 </urlset> 
