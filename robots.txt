@@ -17,8 +17,8 @@ Disallow: /*.css$
 # 検索エンジンフレンドリーな設定
 Crawl-delay: 1
 
-# サイトマップの場所を明示的に指定（キャッシュバスティング）
-Sitemap: https://mrvr.netlify.app/sitemap.xml?v=20250620
+# サイトマップの場所を明示的に指定（一時的にコメントアウト）
+# Sitemap: https://mrvr.netlify.app/sitemap.xml?v=20250620
 
 # 最終更新: 2025-06-20
 # Google固有の設定
