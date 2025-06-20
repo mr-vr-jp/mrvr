@@ -2,25 +2,25 @@ User-agent: *
 Allow: /
 Allow: /en/
 Allow: /zh/
-Disallow: /assets/js/
-Disallow: /assets/css/
-
-# 画像とリソースへのアクセスを許可
 Allow: /assets/images/
 Allow: /manifest.json
+Allow: /favicon.ico
+Allow: /sitemap.xml
+Allow: /robots.txt
 
-# スクリプトとスタイルからインデックスを除外
-Noindex: /assets/js/
-Noindex: /assets/css/
+# 不要なリソースのクロールを制限
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /*.js$
+Disallow: /*.css$
 
-# 中国のクローラー向け最適化
-User-agent: Baiduspider
+# 検索エンジンフレンドリーな設定
+Crawl-delay: 1
+
+# サイトマップの場所を明示的に指定
+Sitemap: https://mrvr.netlify.app/sitemap.xml
+
+# Google固有の設定
+User-agent: Googlebot
 Allow: /
-Allow: /zh/
-Crawl-delay: 5
-
-# クロール遅延（一般的な検索エンジン向け）
-Crawl-delay: 10
-
-# サイトマップ
-Sitemap: https://mrvr.netlify.app/sitemap.xml 
+Allow: /sitemap.xml 
