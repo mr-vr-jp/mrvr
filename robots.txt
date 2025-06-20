@@ -20,6 +20,7 @@ Crawl-delay: 1
 # サイトマップの場所を明示的に指定
 Sitemap: https://mrvr.netlify.app/sitemap.xml
 
+# 最終更新: 2025-06-20
 # Google固有の設定
 User-agent: Googlebot
 Allow: /
