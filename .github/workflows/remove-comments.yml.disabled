@@ -158,6 +158,12 @@ jobs:
           const ext = path.extname(fullPath).toLowerCase();
           const filename = path.basename(fullPath);
           
+          // sitemap.xml と robots.txt は除外
+          if (filename === 'sitemap.xml' || filename === 'robots.txt') {
+            console.log(\`Skipping SEO file: \${filename}\`);
+            return;
+          }
+          
           if (ext === '.js') {
             // PWAファイルの場合は専用処理
             if (filename === 'sw.js') {
@@ -191,8 +197,8 @@ jobs:
     - name: Commit changes
       if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
-        git config --local user.email "action@github.com"
+                git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Remove comments from code files [skip ci]"
-                git push 
+        git push 
